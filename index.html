@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>뱀게임 만들기 with js</title>
+  <script src="js/snake.js"></script>
+
+  <style>
+    .header{
+      width: 400px;
+      margin: auto;
+    }
+    #start{
+      font-weight: bold;
+      height: 40px;
+      border: 1px solid blue;
+      width: 70px;
+      background: #5AAFFF;
+      color: #fff;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    #score{
+      float: right;
+      font-size: 20px;
+      line-height: 50px;
+    }
+    #snakehouse{
+      width: 400px;
+      height: 400px;
+      border: 1px solid #666;
+      margin: 25px auto;
+    }
+    #snakeTable td{
+      border: 1px solid blue;
+      width: 20px;
+      height: 20px;
+    }
+    .food{background-color: #CCCCCC;}
+  </style>
+</head>
+
+<body>
+
+  <div class="area header">
+    <h2>뱀 게임</h2>
+    <button id="start">시작!!</button>
+    <span> <span id="score">0</span></span>
+  </div><!--area-->
+
+  <div class="area">
+    <table id="snakehouse">
+      <tr>
+        <td class="snake"></td>
+      </tr>
+
+    </table>
+  </div><!--area-->
+
+</body>
+</html>

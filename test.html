@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>뱀게임 만들기 with js</title>
+  <script src="js/smake.js"></script>
+</head>
+<style>
+  body{
+    background: darkgreen;
+    height: 100%;
+  }
+  .game{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -405px;
+    margin-top: -495px;
+    width: 810px;
+    height: 810px;
+    border: 2px solid lightgreen;
+  }
+  .level,.countdown,.ended,.best{
+    text-transform: uppercase;
+  }
+  nav{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 40px;
+    background: lightgoldenrodyellow;
+
+    display: none;
+  }
+  .chosse{
+    font-weight: bold;
+  }
+  .level:hover{
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .countdown,.ended,.best{
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 60px;
+    background: hotpink;
+    color: #fff;
+
+    display: none;
+  }
+  .score{
+    display: flex;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 800px;
+  }
+  .info{
+    flex-direction: row;
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    padding: 15px 0;
+  }
+  .info:hover{
+    background: lightgreen;
+    color: darkgreen;
+    /*border: 2px solid #fff;*/
+  }
+
+  .board{
+
+  }
+ .snake{
+   background: lightgreen;
+   width: 45px;
+   height: 45px;
+   border-radius: 10px;
+ }
+
+</style>
+<body>
+
+  <div class="game">
+    <nav>
+      <h1>snack game</h1>
+      <p class="chosse">&lt; Choose lv &gt;</p>
+      <p class="level">easy</p>
+      <p class="level">hard</p>
+      <p class="level">hell</p>
+    </nav>
+
+    <h2 class="countdown">go!</h2>
+    <h2 class="ended">game over!</h2>
+    <h2 class="best">best score!</h2>
+
+    <div class="board">
+      <div class="cell"></div>
+      <div class="cell snake"></div>
+    </div>
+
+    <!--하단-->
+    <div class="score">
+      <p class="info left">기록</p><!--ㅇㅇ-->
+      <p class="info share">share!</p><!--점수 공유하기-->
+      <p class="info right">
+        <span class="level">레벨</span><!--레벨 값이 들어오는 곳-->
+        <span class="best">최고기록</span><!--최고 기록이 뜨는 곳-->
+      </p><!--점수 공유하기-->
+    </div>
+
+
+  </div><!--game-->
+
+</body>
+</html>
