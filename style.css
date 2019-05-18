@@ -1,0 +1,10 @@
+table {
+    background: lightgray;
+    border-collapse: collapse;
+}
+
+table tr td {
+    border: 1px solid gray;
+    width: 16px;
+    height: 16px;
+}
