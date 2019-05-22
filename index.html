@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>뱀게임 만들기 with js</title>
-  <script src="js/snake.js"></script>
-
+  <script src="js/game.js"></script>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery-ui.min.js"></script>
   <style>
     .header{
       width: 400px;
@@ -31,8 +32,8 @@
       border: 1px solid #666;
       margin: 25px auto;
     }
-    #snakeTable td{
-      border: 1px solid blue;
+    .snake{
+      background: blue;
       width: 20px;
       height: 20px;
     }
@@ -49,11 +50,8 @@
   </div><!--area-->
 
   <div class="area">
-    <table id="snakehouse">
-      <tr>
-        <td class="snake"></td>
-      </tr>
-
+    <div id="snakehouse">
+      <p class="snake"></p>
     </table>
   </div><!--area-->
 
