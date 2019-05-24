@@ -1,48 +1,41 @@
 class Snake {
-  color = 'green'
-  location = { x: 0, y: 0 }
+  location = { tr: 0, td: 0 }
 
   crawl () {
-    console.log('call crawl', this.location.x);
-    this.location.x = this.location.x + 1
+    this.location.td = this.location.td + 1
   }
 }
 
-
 class Game {
 
-  board = document.getElementById('board')
   snake = new Snake()
 
-  createBoard (rowCount, colCount) {
-    for (let i = 0; i < rowCount; i++) {
-      let row = this.board.insertRow(i)
-      for (let j = 0; j < colCount; j++) {
-        row.insertCell(j)
+  createBoard (trCount, tdCount) {
+    let table = '<table>'
+    for (let i = 0; i < trCount; i++) {
+      table += '<tr>'
+      for (let j = 0; j < tdCount; j++) {
+        table += `<td id = ${i}-${j}></td>`
       }
+      table += '</tr>'
     }
+    table += '</table>'
+    $('#board').append(table)
   }
 
   changeAllBackgroundColor () {
-    const tds = this.board.getElementsByTagName('td')
-    for (let td of tds) {
-      td.style.backgroundColor = 'lightgray';
-    }
+    $('td').removeClass('snake')
   }
 
-  changeBackgroundColor (x, y, color) {
-    // tr == y
-    // td == x
-    const tr = this.board.getElementsByTagName('tr')[y]
-    const td = tr.getElementsByTagName('td')[x]
-    td.style.backgroundColor = color;
+  changeBackgroundColor (tr, td) {
+    $(`#${tr}-${td}`).addClass('snake')
   }
 
   play () {
-    this.createBoard(30, 30);
+    this.createBoard(30, 30)
     setInterval(() => {
-      this.changeAllBackgroundColor();
-      this.changeBackgroundColor(this.snake.location.x, this.snake.location.y, this.snake.color);
+      this.changeAllBackgroundColor()
+      this.changeBackgroundColor(this.snake.location.tr, this.snake.location.td)
       this.snake.crawl()
     }, 1000)
   }
@@ -50,4 +43,4 @@ class Game {
 }
 
 const game = new Game()
-game.play();
+game.play()
