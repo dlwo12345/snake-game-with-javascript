@@ -49,13 +49,6 @@ var eventInit = function () {
                 break;
         }
     });
-
-    // 방향키 mouseover, click 이벤트 바인딩
-    $('.rudder-key').on('click mouseover', function (e) {
-        $('.rudder-key').removeClass('active');
-        direction = e.target.classList[1];
-        $('.rudder-key.' + e.target.classList[1]).addClass('active');
-    });
 };
 
 // 화면 그리기
