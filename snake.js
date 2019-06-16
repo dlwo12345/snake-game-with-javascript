@@ -29,23 +29,34 @@ var init = function () {
 var eventInit = function () {
     // 방향키 이벤트 바인딩
     $(document).keydown(function (e) {
-        $('.rudder-key').removeClass('active');
         switch (e.keyCode) {
             case 37:
-                direction = 'left';
-                $('.rudder-key.left').addClass('active');
+                if (direction !== 'right') {
+                    direction = 'left';
+                    $('.rudder-key').removeClass('active');
+                    $('.rudder-key.left').addClass('active');
+                }
                 break;
             case 38:
-                direction = 'top';
-                $('.rudder-key.top').addClass('active');
+                if (direction !== 'bottom') {
+                    direction = 'top';
+                    $('.rudder-key').removeClass('active');
+                    $('.rudder-key.top').addClass('active');
+                }
                 break;
             case 39:
-                direction = 'right';
-                $('.rudder-key.right').addClass('active');
+                if (direction !== 'left') {
+                    direction = 'right';
+                    $('.rudder-key').removeClass('active');
+                    $('.rudder-key.right').addClass('active');
+                }
                 break;
             case 40:
-                direction = 'bottom';
-                $('.rudder-key.bottom').addClass('active');
+                if (direction !== 'top') {
+                    direction = 'bottom';
+                    $('.rudder-key').removeClass('active');
+                    $('.rudder-key.bottom').addClass('active');
+                }
                 break;
         }
     });
